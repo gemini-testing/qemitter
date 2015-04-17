@@ -1,0 +1,36 @@
+{
+  "name": "qemitter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "q": "^1.2.0"
+  },
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "chai-as-promised": "^5.0.0",
+    "mocha": "^2.2.4",
+    "sinon": "^1.14.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SevInf/qemitter.git"
+  },
+  "keywords": [
+    "eventemitter",
+    "promise",
+    "q"
+  ],
+  "author": "Sergey Tatarintsev <sevinf@yandex-team.ru> (https://github.com/SevInf)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SevInf/qemitter/issues"
+  },
+  "homepage": "https://github.com/SevInf/qemitter"
+}
