@@ -1,12 +1,6 @@
 'use strict';
-var chai = require('chai'),
-    sinon = require('sinon'),
-    QEmitter = require('..'),
+var QEmitter = require('..'),
     Q = require('q');
-
-chai.use(require('chai-as-promised'));
-var assert = chai.assert;
-sinon.assert.expose(assert, {prefix: ''});
 
 describe('QEmitter', function() {
     it('wait until the promise from handler is resolved', function() {

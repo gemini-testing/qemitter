@@ -21,5 +21,15 @@
       "test/*": {
         "mocha": true
       }
+    },
+    "globals": {
+      "describe": false,
+      "before": false,
+      "after": false,
+      "beforeEach": false,
+      "afterEach": false,
+      "it": false,
+      "assert": false,
+      "sinon": false
     }
 }

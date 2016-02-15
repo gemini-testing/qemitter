@@ -22,3 +22,11 @@ emmiter.emitAndWait('event')
 ```
 
 `emitAndWait` returns [`Q`](https://github.com/kriskowal/q) promise.
+
+## utils
+
+### passthroughEvent(from, to, event)
+
+Passes event from `from` to `to`.
+
+`event` can be an array of events.
