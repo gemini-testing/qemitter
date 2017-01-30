@@ -1,12 +1,13 @@
 {
   "name": "qemitter",
   "version": "1.1.0",
-  "description": "",
+  "description": "Node.js event emitter with promises support",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "q": "^1.2.0"
   },
   "devDependencies": {
