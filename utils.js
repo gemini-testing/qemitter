@@ -1,12 +1,16 @@
 'use strict';
 
-function passthroughEvent(from, to, event) {
-    if (typeof event === 'string') {
-        from.on(event, to.emitAndWait.bind(to, event));
-        return;
-    }
+const mkPassthroughFn = (methodName) => {
+    const passEvents = (from, to, event) => {
+        if (typeof event === 'string') {
+            from.on(event, to[methodName].bind(to, event));
+            return;
+        }
+        event.forEach((event) => passEvents(from, to, event));
+    };
 
-    event.forEach(passthroughEvent.bind(null, from, to));
-}
+    return passEvents;
+};
 
-exports.passthroughEvent = passthroughEvent;
+exports.passthroughEvent = mkPassthroughFn('emit');
+exports.passthroughEventAsync = mkPassthroughFn('emitAndWait');

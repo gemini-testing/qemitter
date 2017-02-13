@@ -1,20 +1,13 @@
 'use strict';
-var EventEmitter = require('events').EventEmitter,
-    util = require('util'),
-    Q = require('q');
 
-function QEmitter() {
-    EventEmitter.call(this);
-}
+const _ = require('lodash');
+const EventEmitter = require('events').EventEmitter;
+const Q = require('q');
 
-util.inherits(QEmitter, EventEmitter);
-
-QEmitter.prototype.emitAndWait = function(type) {
-    var args = Array.prototype.slice.call(arguments, 1),
-        listeners = this.listeners(type);
-    return Q.all(listeners.map(function(listener) {
-        return listener.apply(this, args);
-    }));
+module.exports = class QEmitter extends EventEmitter {
+    emitAndWait(type) {
+        const args = _(arguments).values().tail().value();
+        const listeners = this.listeners(type);
+        return Q.all(listeners.map((listener) => listener.apply(this, args)));
+    }
 };
-
-module.exports = QEmitter;
